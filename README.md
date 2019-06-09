@@ -8,3 +8,6 @@
 [怎样看待淘宝将不再展示卖家店铺档案页面？](https://www.zhihu.com/question/319211686)
 
 **其中有人写了个Chrome扩展。因为不想安装扩展，于是有个这个脚本。**
+
+## 如何安装
+[安装地址](https://greasyfork.org/zh-CN/scripts/385169-%E6%B7%98%E5%AE%9D%E8%AF%A6%E6%83%85%E9%A1%B5%E6%98%BE%E7%A4%BA)
