@@ -10,23 +10,22 @@
 // @run-at       document-body
 // ==/UserScript==
 
-(function() {
-    var body = document.body;
-    var config = {childList: true, subtree: true };
-    var callback = function(mutationsList) {
-        for(var mutation of mutationsList) {
+(function () {
+    var config = { childList: true, subtree: true };
+    var callback = function (mutationsList) {
+        for (var mutation of mutationsList) {
             if (mutation.type == 'childList') {
-                if ( mutation.target.tagName == 'SCRIPT' &&  mutation.target.innerHTML.indexOf("window.location.href")>0) {
-                    mutation.target.innerHTML= '';
+                if (mutation.target.tagName == 'SCRIPT' && mutation.target.innerHTML.indexOf("window.location.href") >= 0) {
+                    mutation.target.innerHTML = '';
                 }
 
-                if (mutation.target.tagName== 'SCRIPT' && mutation.target.innerHTML.indexOf("addEventListener")>0) {
-                    mutation.target.innerHTML= '';
+                if (mutation.target.tagName == 'SCRIPT' && mutation.target.innerHTML.indexOf("addEventListener") >= 0) {
+                    mutation.target.innerHTML = '';
                     observer.disconnect();
                 }
             }
         }
     };
     var observer = new MutationObserver(callback);
-    observer.observe(body, config);
+    observer.observe(document.body, config);
 })();
